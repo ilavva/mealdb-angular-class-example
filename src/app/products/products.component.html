@@ -1,0 +1,8 @@
+<div *ngFor="let curr of products" (click)="userClickedAProduct(curr.id)">
+    <h2>{{curr.id}}</h2>
+    <p style="color: blue; text-decoration: underline;">
+        {{ curr.name }}</p>
+    <p>price: {{ curr.price }}</p>
+    <hr style="max-width: 200px; margin-left: 0;">
+</div>
+<app-product-detailed-view></app-product-detailed-view>

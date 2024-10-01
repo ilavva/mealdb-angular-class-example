@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  height: 35px;
+
+  background-color: rgb(202, 173, 173);
+}
+.navbar > div {
+  border: outset;
+  width: 95%;
+  text-align: center;
+  cursor: pointer;
+}
+/*
+.tafrit{
+    display:block;
+}
+
+.hamburgerTafrit{
+    display: none;
+}
+
+@media(max-width=300px){
+    .tafrit{
+        display:none;
+    }
+
+    .hamburgerTafrit{
+        display: block;
+    }
+}
+    */

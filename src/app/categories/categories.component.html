@@ -1,0 +1,11 @@
+<div class="Categories">
+  <div class="categoriesMenu">
+    <ng-container *ngIf="categoriesArr">
+      <div *ngFor="let curr of categoriesArr">
+        <h3>{{ curr.strCategory }}</h3>
+      </div>
+    </ng-container>
+  </div>
+  <!-- food- detailed view -->
+  <app-food-dishes-detailed-view></app-food-dishes-detailed-view>
+</div>
