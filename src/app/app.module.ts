@@ -13,6 +13,7 @@ import { RoutingDemoComponent } from './routing-demo/routing-demo.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodDishesDetailedViewComponent } from './food-dishes-detailed-view/food-dishes-detailed-view.component';
+import { FoodInstructionsDetailedViewComponent } from './food-instructions-detailed-view/food-instructions-detailed-view.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FoodDishesDetailedViewComponent } from './food-dishes-detailed-view/foo
 
     CategoriesComponent,
     FoodDishesDetailedViewComponent,
+    FoodInstructionsDetailedViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

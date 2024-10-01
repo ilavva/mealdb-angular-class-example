@@ -17,17 +17,24 @@ export class FoodDishesDetailedViewComponent {
   ) {}
 
   ngOnInit(): void {
-    this.categoryDishesId = this.route.snapshot.params['id'];
-
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let temp = params.get('id');
+      let temp = params.get('categoryId');
       this.categoryDishesId = temp ? temp : 'NA';
+      console.log(`UTL CHANGED ${new Date(Date.now()).toLocaleString()}`);
       this.foodService.getMealDishesOfCategoryFromAPI(this.categoryDishesId);
     });
-
+    console.log(
+      `subscribing to MealDishes ${new Date(Date.now()).toLocaleString()}`
+    );
     this.foodService
       .getTheMealDishesOfCategorySubject()
       .subscribe((dataOfDishMealsFromAPI) => {
+        console.log(
+          `subscre  TheMealDishes wasCALLED ${new Date(
+            Date.now()
+          ).toLocaleString()}`
+        );
+
         this.categoryDishesArr = (
           dataOfDishMealsFromAPI as DataOfDishMealsFromAPI
         ).meals;
