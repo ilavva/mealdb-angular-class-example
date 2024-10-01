@@ -6,6 +6,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailedViewComponent } from './product-detailed-view/product-detailed-view.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { FoodDishesDetailedViewComponent } from './food-dishes-detailed-view/food-dishes-detailed-view.component';
 
 const routes: Routes = [
   // user types as path    component to show on '<router-outlet>'
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductsComponent },
   { path: 'contact', component: ContactusComponent },
   { path: 'food', component: CategoriesComponent },
+  { path: 'food/:id', component: CategoriesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

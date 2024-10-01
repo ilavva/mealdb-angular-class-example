@@ -1,6 +1,12 @@
-.Categories {
+.MainView {
   display: flex;
 }
-.categoriesMenu {
-  background-color: antiquewhite;
+.MenuView {
+  display: block;
+}
+.DetailsView {
+  border: 1px solid gainsboro;
+  width: 90%;
+  margin: 5px auto;
+  padding: 5px;
 }

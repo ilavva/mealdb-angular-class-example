@@ -1,11 +1,16 @@
-<div class="Categories">
-  <div class="categoriesMenu">
+<div class="MainView">
+  <div class="MenuView">
     <ng-container *ngIf="categoriesArr">
-      <div *ngFor="let curr of categoriesArr">
+      <div
+        *ngFor="let curr of categoriesArr"
+        (click)="userClickedCategory(curr.strCategory)"
+      >
         <h3>{{ curr.strCategory }}</h3>
       </div>
     </ng-container>
   </div>
-  <!-- food- detailed view -->
-  <app-food-dishes-detailed-view></app-food-dishes-detailed-view>
+  <div class="DetailsView">
+    <!-- food- detailed view -->
+    <app-food-dishes-detailed-view></app-food-dishes-detailed-view>
+  </div>
 </div>

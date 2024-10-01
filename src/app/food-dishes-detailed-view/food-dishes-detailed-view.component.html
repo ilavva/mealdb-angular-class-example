@@ -1,1 +1,7 @@
-<p>food-dishes-detailed-view works!</p>
+<div>
+  <p>food-dishes-detailed-view works!</p>
+  <h2 *ngIf="this.categoryDishesId">{{ this.categoryDishesId }}</h2>
+  <div *ngFor="let curr of categoryDishesArr">
+    <h3>{{ curr.strMeal }}</h3>
+  </div>
+</div>
