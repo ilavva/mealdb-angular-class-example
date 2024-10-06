@@ -8,6 +8,7 @@ import { ReplaySubject } from 'rxjs';
 export class FoodService {
   private categoriesSubject = new ReplaySubject(1); // Buffer size 1
   private mealDishesOfCategorySubject = new ReplaySubject(1);
+  private mealInstructionSubject = new ReplaySubject(1);
 
   constructor(private http: HttpClient) {}
 
@@ -19,10 +20,6 @@ export class FoodService {
       });
   }
 
-  getTheCategoriesSubject() {
-    return this.categoriesSubject;
-  }
-
   getMealDishesOfCategoryFromAPI(category: string) {
     this.http
       .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
@@ -30,7 +27,24 @@ export class FoodService {
         this.mealDishesOfCategorySubject.next(theData);
       });
   }
+
+  getMealInstrunctionFromAPI(mealId: string) {
+    this.http
+      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+      .subscribe((theData) => {
+        this.mealInstructionSubject.next(theData);
+      });
+  }
+
+  getTheCategoriesSubject() {
+    return this.categoriesSubject;
+  }
+
   getTheMealDishesOfCategorySubject() {
     return this.mealDishesOfCategorySubject;
+  }
+
+  getInstructionsSubject() {
+    return this.mealInstructionSubject;
   }
 }

@@ -2,6 +2,14 @@ export type CategoriesWeGetFromAPI = {
   categories: Category[];
 };
 
+export type DataOfDishMealsFromAPI = {
+  meals: MealDish[];
+};
+
+export type DataMealInstructionsFromAPI = {
+  meals: MealInstruction[];
+};
+
 export type Category = {
   idCategory: string;
   strCategory: string;
@@ -15,6 +23,13 @@ export type MealDish = {
   idMeal: string;
 };
 
-export type DataOfDishMealsFromAPI = {
-  meals: MealDish[];
+export type MealInstruction = {
+  idMeal: string;
+  strMeal: string;
+  strCategory: string;
+  strInstructions: string;
+  strMealThumb: string;
+  strTags: string;
+  strYoutube: string;
+  strSource: string;
 };

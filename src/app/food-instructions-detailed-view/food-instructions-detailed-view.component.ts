@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { DataMealInstructionsFromAPI, MealInstruction } from '../types';
+import { FoodService } from '../food.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-food-instructions-detailed-view',
   templateUrl: './food-instructions-detailed-view.component.html',
-  styleUrls: ['./food-instructions-detailed-view.component.css']
+  styleUrls: ['./food-instructions-detailed-view.component.css'],
 })
-export class FoodInstructionsDetailedViewComponent {
-
+export class FoodInstructionsDetailedViewComponent implements OnInit {
+  idMeal?: string;
+  mealInstruction?: MealInstruction;
+  constructor(
+    private route: ActivatedRoute,
+    private foodService: FoodService
+  ) {}
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      let temp = params.get('idMeal');
+      this.idMeal = temp ? temp : 'NA';
+      console.log(
+        `URL idMeal CHANGED ${new Date(Date.now()).toLocaleString()}`
+      );
+      this.foodService.getMealInstrunctionFromAPI(this.idMeal);
+    });
+    this.foodService
+      .getInstructionsSubject()
+      .subscribe((dataOfInstrunctionFromAPI) => {
+        this.mealInstruction = (
+          dataOfInstrunctionFromAPI as DataMealInstructionsFromAPI
+        ).meals[0];
+      });
+  }
 }

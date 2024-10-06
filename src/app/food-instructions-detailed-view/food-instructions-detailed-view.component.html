@@ -1,1 +1,14 @@
-<p>food-instructions-detailed-view works!</p>
+<div class="InstructionView">
+  <ng-container *ngIf="this.mealInstruction">
+    <h2 *ngIf="this.mealInstruction.strMeal">
+      {{ this.mealInstruction.strMeal }}
+    </h2>
+    <div class="Instruction" *ngIf="this.mealInstruction.strInstructions">
+      {{ this.mealInstruction.strInstructions }}
+    </div>
+  </ng-container>
+
+  <p *ngIf="this.idMeal">
+    <small>{{ this.idMeal }}</small>
+  </p>
+</div>

@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-routing-demo',
   templateUrl: './routing-demo.component.html',
-  styleUrls: ['./routing-demo.component.css']
+  styleUrls: ['./routing-demo.component.css'],
 })
-export class RoutingDemoComponent {
-
-}
+export class RoutingDemoComponent {}
