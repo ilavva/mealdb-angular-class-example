@@ -1,3 +1,6 @@
+This project demo:
+[https://mealdb4.netlify.app/](https://mealdb4.netlify.app/)
+
 # StartingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
