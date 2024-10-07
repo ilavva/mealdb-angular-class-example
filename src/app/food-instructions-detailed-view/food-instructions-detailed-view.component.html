@@ -1,8 +1,13 @@
-<div class="InstructionView">
+<div class="InstructionView" *ngIf="this.idMeal && this.idMeal != 'NA'">
   <ng-container *ngIf="this.mealInstruction">
     <h2 *ngIf="this.mealInstruction.strMeal">
       {{ this.mealInstruction.strMeal }}
     </h2>
+    <img
+      class="InstructionImg"
+      [src]="this.mealInstruction.strMealThumb"
+      alt=""
+    />
     <div class="Instruction" *ngIf="this.mealInstruction.strInstructions">
       {{ this.mealInstruction.strInstructions }}
     </div>

@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { ProductsComponent } from './products/products.component';
+
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { FoodCategoriesComponent } from './food-categories/food-categories.component';
 
 const routes: Routes = [
   // user types as path    component to show on '<router-outlet>'
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutusComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'products/:id', component: ProductsComponent },
+
   { path: 'contact', component: ContactusComponent },
-  { path: 'food', component: CategoriesComponent },
-  { path: 'food/:categoryId', component: CategoriesComponent },
-  { path: 'food/:categoryId/:idMeal', component: CategoriesComponent },
+  { path: 'food', component: FoodCategoriesComponent },
+  { path: 'food/:categoryId', component: FoodCategoriesComponent },
+  { path: 'food/:categoryId/:idMeal', component: FoodCategoriesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

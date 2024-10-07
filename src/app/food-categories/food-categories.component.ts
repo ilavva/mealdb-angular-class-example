@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../food.service';
-import { CategoriesWeGetFromAPI, Category } from '../types';
+import {
+  CategoriesWeGetFromAPI as FoodCategoriesWeGetFromAPI,
+  Category,
+} from '../types';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css'],
+  templateUrl: './food-categories.component.html',
+  styleUrls: ['./food-categories.component.css'],
 })
-export class CategoriesComponent implements OnInit {
+export class FoodCategoriesComponent implements OnInit {
   constructor(private foodService: FoodService, private router: Router) {}
 
   categoriesArr?: Category[]; //= //["Beef", "Chicken", "Cakes"];
@@ -17,7 +20,7 @@ export class CategoriesComponent implements OnInit {
 
     this.foodService.getTheCategoriesSubject().subscribe((infoOfCategories) => {
       this.categoriesArr = (
-        infoOfCategories as CategoriesWeGetFromAPI
+        infoOfCategories as FoodCategoriesWeGetFromAPI
       ).categories;
     });
   }

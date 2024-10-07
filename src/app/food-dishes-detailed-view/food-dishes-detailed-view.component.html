@@ -1,6 +1,8 @@
 <div class="MainView">
   <div class="MenuView">
-    <h2 *ngIf="this.categoryDishesId">{{ this.categoryDishesId }}</h2>
+    <h2 *ngIf="this.categoryDishesId && this.categoryDishesId != 'NA'">
+      {{ this.categoryDishesId }}
+    </h2>
     <div
       *ngFor="let curr of categoryDishesArr"
       (click)="userClickedMeal(curr.idMeal)"
@@ -8,7 +10,10 @@
       <h3>{{ curr.strMeal }}</h3>
     </div>
   </div>
-  <div class="DetailsView">
+  <div
+    class="DetailsView"
+    *ngIf="this.categoryDishesId && this.categoryDishesId != 'NA'"
+  >
     <app-food-instructions-detailed-view></app-food-instructions-detailed-view>
   </div>
 </div>

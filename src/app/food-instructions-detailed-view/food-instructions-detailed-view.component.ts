@@ -18,9 +18,7 @@ export class FoodInstructionsDetailedViewComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let temp = params.get('idMeal');
       this.idMeal = temp ? temp : 'NA';
-      console.log(
-        `URL idMeal CHANGED ${new Date(Date.now()).toLocaleString()}`
-      );
+
       this.foodService.getMealInstrunctionFromAPI(this.idMeal);
     });
     this.foodService
@@ -29,6 +27,7 @@ export class FoodInstructionsDetailedViewComponent implements OnInit {
         this.mealInstruction = (
           dataOfInstrunctionFromAPI as DataMealInstructionsFromAPI
         ).meals[0];
+        console.log(this.mealInstruction);
       });
   }
 }
