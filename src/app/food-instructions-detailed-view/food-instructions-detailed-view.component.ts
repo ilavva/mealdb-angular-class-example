@@ -10,6 +10,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class FoodInstructionsDetailedViewComponent implements OnInit {
   idMeal?: string;
   mealInstruction?: MealInstruction;
+  arrInstrunctions?: string[];
   constructor(
     private route: ActivatedRoute,
     private foodService: FoodService
@@ -28,6 +29,16 @@ export class FoodInstructionsDetailedViewComponent implements OnInit {
           dataOfInstrunctionFromAPI as DataMealInstructionsFromAPI
         ).meals[0];
         console.log(this.mealInstruction);
+        this.formatInstrunctions();
       });
+  }
+
+  formatInstrunctions() {
+    if (this.mealInstruction) {
+      let instr = this.mealInstruction.strInstructions.split('.');
+      this.arrInstrunctions = instr;
+    } else {
+      this.arrInstrunctions = [''];
+    }
   }
 }

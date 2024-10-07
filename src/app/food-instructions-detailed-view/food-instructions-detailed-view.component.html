@@ -9,7 +9,7 @@
       alt=""
     />
     <div class="Instruction" *ngIf="this.mealInstruction.strInstructions">
-      {{ this.mealInstruction.strInstructions }}
+      <p *ngFor="let intr of this.arrInstrunctions">{{ intr }}.</p>
     </div>
   </ng-container>
 
