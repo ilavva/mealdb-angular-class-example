@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodService } from '../food.service';
 import { CategoriesWeGetFromAPI, Category } from '../types';
 import { Router } from '@angular/router';
+import { FoodService } from '../food.service';
+
 @Component({
-  selector: 'app-categories',
-  templateUrl: './food-categories.component.html',
-  styleUrls: ['./food-categories.component.css'],
+  selector: 'app-food-categories-gallery',
+  templateUrl: './food-categories-gallery.component.html',
+  styleUrls: ['./food-categories-gallery.component.css'],
 })
-export class FoodCategoriesComponent implements OnInit {
+export class FoodCategoriesGalleryComponent implements OnInit {
+  categoriesArr?: Category[];
   constructor(private foodService: FoodService, private router: Router) {}
-
-  categoriesArr?: Category[]; //= //["Beef", "Chicken", "Cakes"];
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.foodService.getCategoriesFromAPI();
 
     this.foodService.getTheCategoriesSubject().subscribe((infoOfCategories) => {
@@ -21,7 +20,6 @@ export class FoodCategoriesComponent implements OnInit {
       ).categories;
     });
   }
-
   userClickedCategory(categoryId: string) {
     this.router.navigate(['/food', categoryId]);
   }

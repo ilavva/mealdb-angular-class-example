@@ -1,0 +1,24 @@
+.food-category-card {
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(142, 255, 215, 0.188);
+}
+.food-category-card img {
+  border-radius: 50%;
+  width: 50%;
+}
+.food-category-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.food-category-card-hover p {
+  background-color: rgba(0, 0, 0, 0.073);
+  overflow: visible;
+  display: inline;
+  z-index: 30;
+}

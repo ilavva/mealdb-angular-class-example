@@ -13,6 +13,8 @@ import { FoodCategoriesComponent } from './food-categories/food-categories.compo
 import { HttpClientModule } from '@angular/common/http';
 import { FoodDishesDetailedViewComponent } from './food-dishes-detailed-view/food-dishes-detailed-view.component';
 import { FoodInstructionsDetailedViewComponent } from './food-instructions-detailed-view/food-instructions-detailed-view.component';
+import { FoodCategoryCardComponent } from './food-category-card/food-category-card.component';
+import { FoodCategoriesGalleryComponent } from './food-categories-gallery/food-categories-gallery.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FoodInstructionsDetailedViewComponent } from './food-instructions-detai
     FoodCategoriesComponent,
     FoodDishesDetailedViewComponent,
     FoodInstructionsDetailedViewComponent,
+    FoodCategoryCardComponent,
+    FoodCategoriesGalleryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

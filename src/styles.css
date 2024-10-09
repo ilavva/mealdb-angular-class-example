@@ -1,5 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* h2 {
-    color: brown;
+/* h1 {
+  color: brown;
 } */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aquamarine;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(226, 255, 245, 1) 20%,
+    rgb(226, 255, 245, 1) 20%,
+    rgba(255, 255, 255, 1) 40% /* Repeat the first color */
+  );
+  height: 100vh;
+}

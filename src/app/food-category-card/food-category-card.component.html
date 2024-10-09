@@ -1,0 +1,9 @@
+<div
+  class="food-category-card"
+  *ngIf="foodCategory"
+  (click)="userClickedCategory(foodCategory.strCategory)"
+>
+  <h3>{{ foodCategory.strCategory }}</h3>
+  <img [src]="foodCategory.strCategoryThumb" alt="foodCategory.strCategory" />
+  <p>{{ foodCategory.strCategoryDescription }}</p>
+</div>

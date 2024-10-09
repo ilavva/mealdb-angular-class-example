@@ -1,0 +1,11 @@
+<div class="gallery" *ngIf="categoriesArr">
+  <ng-container
+    *ngFor="let curr of categoriesArr"
+    (click)="userClickedCategory(curr.strCategory)"
+  >
+    <app-food-category-card
+      class="gallery-item"
+      [foodCategory]="curr"
+    ></app-food-category-card>
+  </ng-container>
+</div>
