@@ -1,19 +1,36 @@
 .MainView {
-  display: flex;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 1);
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgb(237, 243, 182)
-  );
+  display: block;
+
   padding: 10px;
 }
 .MenuView {
-  display: block;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-right: 20px;
   padding-left: 10px;
-  height: 100vh;
+  /* height: 100vh; */
+}
+.MenuView h3 {
+  border: 1px solid rgb(173, 255, 189);
+  background-color: rgba(173, 255, 189, 0.105);
+  color: rgb(64, 64, 64);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+.MenuView h3:hover {
+  background-color: rgba(252, 255, 253, 0.501);
+  border: 1px solid rgba(182, 255, 243, 0.668);
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+.MenuView h3.choosen {
+  background-color: rgba(166, 255, 194, 0.8);
+  border: 1px solid rgb(158, 239, 184);
+  color: rgb(0, 0, 0);
+  transform: scale(1.1);
 }
 .DetailsView {
   border: 1px solid gainsboro;

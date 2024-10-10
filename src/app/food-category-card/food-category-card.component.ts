@@ -11,12 +11,16 @@ import { Category } from '../types';
 export class FoodCategoryCardComponent implements OnInit {
   @Input()
   foodCategory?: Category;
+  choosenCategory: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.choosenCategory = '';
+  }
   ngOnInit(): void {}
 
   userClickedFoodCategory(categoryId: string) {
     console.log('/food-gallery', categoryId);
+    this.choosenCategory = categoryId;
     this.router.navigate(['/food-gallery', categoryId]);
   }
 }

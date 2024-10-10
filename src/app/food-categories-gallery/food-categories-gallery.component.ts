@@ -10,6 +10,7 @@ import { FoodService } from '../food.service';
 })
 export class FoodCategoriesGalleryComponent implements OnInit {
   categoriesArr?: Category[];
+
   constructor(private foodService: FoodService, private router: Router) {}
   ngOnInit(): void {
     this.foodService.getCategoriesFromAPI();

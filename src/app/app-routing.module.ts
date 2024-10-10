@@ -11,16 +11,16 @@ import { FoodCategoryViewComponent } from './food-category-view/food-category-vi
 
 const routes: Routes = [
   // user types as path    component to show on '<router-outlet>'
-  { path: 'home', component: HomeComponent },
+  // { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutusComponent },
 
-  { path: 'contact', component: ContactusComponent },
+  // { path: 'contact', component: ContactusComponent },
   { path: 'food', component: FoodCategoriesComponent },
   { path: 'food/:categoryId', component: FoodCategoriesComponent },
   { path: 'food/:categoryId/:idMeal', component: FoodCategoriesComponent },
   { path: 'food-gallery', component: FoodCategoriesGalleryComponent },
   { path: 'food-gallery/:categoryId', component: FoodCategoryViewComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/food-gallery', pathMatch: 'full' },
 ];
 
 @NgModule({

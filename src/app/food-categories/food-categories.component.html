@@ -5,7 +5,11 @@
         *ngFor="let curr of categoriesArr"
         (click)="userClickedCategory(curr.strCategory)"
       >
-        <h3>{{ curr.strCategory }}</h3>
+        <h3
+          [ngClass]="curr.strCategory === this.choosenCategory ? 'choosen' : ''"
+        >
+          {{ curr.strCategory }}
+        </h3>
       </div>
     </ng-container>
   </div>

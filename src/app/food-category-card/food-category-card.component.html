@@ -3,7 +3,13 @@
   *ngIf="foodCategory"
   (click)="userClickedFoodCategory(foodCategory.strCategory)"
 >
-  <h3>{{ foodCategory.strCategory }}</h3>
+  <h3
+    [ngClass]="
+      foodCategory.strCategory === this.choosenCategory ? 'choosen' : ''
+    "
+  >
+    {{ foodCategory.strCategory }}
+  </h3>
   <img [src]="foodCategory.strCategoryThumb" alt="foodCategory.strCategory" />
   <p>{{ foodCategory.strCategoryDescription }}</p>
 </div>

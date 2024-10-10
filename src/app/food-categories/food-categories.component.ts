@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./food-categories.component.css'],
 })
 export class FoodCategoriesComponent implements OnInit {
-  constructor(private foodService: FoodService, private router: Router) {}
+  constructor(private foodService: FoodService, private router: Router) {
+    this.choosenCategory = '';
+  }
 
   categoriesArr?: Category[]; //= //["Beef", "Chicken", "Cakes"];
+  choosenCategory: string;
 
   ngOnInit() {
     this.foodService.getCategoriesFromAPI();
@@ -23,6 +26,7 @@ export class FoodCategoriesComponent implements OnInit {
   }
 
   userClickedCategory(categoryId: string) {
+    this.choosenCategory = categoryId;
     this.router.navigate(['/food', categoryId]);
   }
 }
