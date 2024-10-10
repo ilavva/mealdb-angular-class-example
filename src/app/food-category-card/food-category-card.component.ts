@@ -15,7 +15,8 @@ export class FoodCategoryCardComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit(): void {}
 
-  userClickedCategory(categoryId: string) {
-    this.router.navigate(['/food', categoryId]);
+  userClickedFoodCategory(categoryId: string) {
+    console.log('/food-gallery', categoryId);
+    this.router.navigate(['/food-gallery', categoryId]);
   }
 }

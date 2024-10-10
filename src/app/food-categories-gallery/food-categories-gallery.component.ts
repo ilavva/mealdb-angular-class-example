@@ -20,7 +20,4 @@ export class FoodCategoriesGalleryComponent implements OnInit {
       ).categories;
     });
   }
-  userClickedCategory(categoryId: string) {
-    this.router.navigate(['/food', categoryId]);
-  }
 }

@@ -15,6 +15,7 @@ import { FoodDishesDetailedViewComponent } from './food-dishes-detailed-view/foo
 import { FoodInstructionsDetailedViewComponent } from './food-instructions-detailed-view/food-instructions-detailed-view.component';
 import { FoodCategoryCardComponent } from './food-category-card/food-category-card.component';
 import { FoodCategoriesGalleryComponent } from './food-categories-gallery/food-categories-gallery.component';
+import { FoodCategoryViewComponent } from './food-category-view/food-category-view.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FoodCategoriesGalleryComponent } from './food-categories-gallery/food-c
     FoodInstructionsDetailedViewComponent,
     FoodCategoryCardComponent,
     FoodCategoriesGalleryComponent,
+    FoodCategoryViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

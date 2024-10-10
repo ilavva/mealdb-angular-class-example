@@ -1,8 +1,5 @@
 <div class="gallery" *ngIf="categoriesArr">
-  <ng-container
-    *ngFor="let curr of categoriesArr"
-    (click)="userClickedCategory(curr.strCategory)"
-  >
+  <ng-container *ngFor="let curr of categoriesArr">
     <app-food-category-card
       class="gallery-item"
       [foodCategory]="curr"
