@@ -6,12 +6,17 @@
         (click)="userClickedCategory(curr.strCategory)"
       >
         <h3
-          [ngClass]="curr.strCategory === this.choosenCategory ? 'choosen' : ''"
+          [ngClass]="
+            curr.strCategory === this.choosenCategoryId ? 'choosen' : ''
+          "
         >
           {{ curr.strCategory }}
         </h3>
       </div>
     </ng-container>
+    <app-food-category-card
+      [foodCategory]="this.choosenCategory"
+    ></app-food-category-card>
   </div>
   <div class="DetailsView">
     <!-- food- detailed view -->

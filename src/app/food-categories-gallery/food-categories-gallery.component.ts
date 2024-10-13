@@ -10,8 +10,9 @@ import { FoodService } from '../food.service';
 })
 export class FoodCategoriesGalleryComponent implements OnInit {
   categoriesArr?: Category[];
-
+  searchStr: string = '';
   constructor(private foodService: FoodService, private router: Router) {}
+
   ngOnInit(): void {
     this.foodService.getCategoriesFromAPI();
 
@@ -20,5 +21,19 @@ export class FoodCategoriesGalleryComponent implements OnInit {
         infoOfCategories as CategoriesWeGetFromAPI
       ).categories;
     });
+  }
+
+  searchButtonClicked(searchValue: string) {
+    console.log('search for:', searchValue);
+    this.searchStr = searchValue;
+  }
+  searchTextChanged(arg0: string) {
+    this.searchStr = arg0;
+  }
+  searchMath(strInDB: string) {
+    if (strInDB.toLowerCase().includes(this.searchStr.toLowerCase())) {
+      return true;
+    }
+    return false;
   }
 }

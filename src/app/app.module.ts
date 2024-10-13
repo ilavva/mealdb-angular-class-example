@@ -16,7 +16,10 @@ import { FoodInstructionsDetailedViewComponent } from './food-instructions-detai
 import { FoodCategoryCardComponent } from './food-category-card/food-category-card.component';
 import { FoodCategoriesGalleryComponent } from './food-categories-gallery/food-categories-gallery.component';
 import { FoodCategoryViewComponent } from './food-category-view/food-category-view.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,16 @@ import { FoodCategoryViewComponent } from './food-category-view/food-category-vi
     FoodCategoriesGalleryComponent,
     FoodCategoryViewComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,8 +1,27 @@
-<div class="gallery" *ngIf="categoriesArr">
-  <ng-container *ngFor="let curr of categoriesArr">
-    <app-food-category-card
-      class="gallery-item"
-      [foodCategory]="curr"
-    ></app-food-category-card>
-  </ng-container>
+<div class="CategoryView">
+  <section>
+    <form class="filter-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          (input)="searchTextChanged(searchInput.value)"
+          #searchInput
+          matInput
+          placeholder="Filter by Food Category"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+  </section>
+
+  <div class="gallery" *ngIf="categoriesArr">
+    <ng-container *ngFor="let curr of categoriesArr">
+      <app-food-category-card
+        *ngIf="searchMath(curr.strCategory)"
+        class="gallery-item"
+        [foodCategory]="curr"
+      ></app-food-category-card>
+    </ng-container>
+  </div>
 </div>

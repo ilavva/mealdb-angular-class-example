@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class FoodCategoriesComponent implements OnInit {
   constructor(private foodService: FoodService, private router: Router) {
-    this.choosenCategory = '';
+    this.choosenCategoryId = '';
   }
 
   categoriesArr?: Category[]; //= //["Beef", "Chicken", "Cakes"];
-  choosenCategory: string;
-
+  choosenCategory?: Category;
+  choosenCategoryId: string;
   ngOnInit() {
     this.foodService.getCategoriesFromAPI();
 
@@ -26,7 +26,7 @@ export class FoodCategoriesComponent implements OnInit {
   }
 
   userClickedCategory(categoryId: string) {
-    this.choosenCategory = categoryId;
+    this.choosenCategoryId = categoryId;
     this.router.navigate(['/food', categoryId]);
   }
 }
