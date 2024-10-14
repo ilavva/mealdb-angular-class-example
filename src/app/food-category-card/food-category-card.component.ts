@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Category } from '../types';
@@ -12,6 +12,7 @@ export class FoodCategoryCardComponent implements OnInit {
   @Input()
   foodCategory?: Category;
   choosenCategory: string;
+  @Output() sendCategoryToParent = new EventEmitter<Category>();
 
   constructor(private router: Router) {
     this.choosenCategory = '';
@@ -22,5 +23,6 @@ export class FoodCategoryCardComponent implements OnInit {
     console.log('/food-gallery', categoryId);
     this.choosenCategory = categoryId;
     this.router.navigate(['/food-gallery', categoryId]);
+    this.sendCategoryToParent.emit(this.foodCategory);
   }
 }

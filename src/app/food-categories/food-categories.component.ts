@@ -2,12 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../food.service';
 import { CategoriesWeGetFromAPI, Category } from '../types';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './food-categories.component.html',
   styleUrls: ['./food-categories.component.css'],
 })
 export class FoodCategoriesComponent implements OnInit {
+  handleCategoryFromChild(recivedFromChildCategory: Category) {
+    this.choosenCategory = recivedFromChildCategory;
+  }
+  removeChip(event: any) {
+    console.log('Chip removed');
+    this.choosenCategoryId = '';
+    // Add your logic to remove the chip from the list if needed
+  }
   constructor(private foodService: FoodService, private router: Router) {
     this.choosenCategoryId = '';
   }

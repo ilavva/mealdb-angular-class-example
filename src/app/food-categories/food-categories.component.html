@@ -14,10 +14,15 @@
         </h3>
       </div>
     </ng-container>
-    <app-food-category-card
-      [foodCategory]="this.choosenCategory"
-    ></app-food-category-card>
   </div>
+  <hr />
+  <p>Display Category here</p>
+  <app-food-category-card
+    [foodCategory]="this.choosenCategory"
+    (sendCategoryToParent)="handleCategoryFromChild($event)"
+  >
+  </app-food-category-card>
+  <p>End</p>
   <div class="DetailsView">
     <!-- food- detailed view -->
     <app-food-dishes-detailed-view></app-food-dishes-detailed-view>

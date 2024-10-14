@@ -39,3 +39,20 @@
   padding: 5px;
   height: 100vh;
 }
+
+mat-chip {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+
+mat-chip.mat-chip-selected {
+  background-color: lightblue;
+  color: black;
+}
+
+mat-icon {
+  cursor: pointer;
+  margin-right: 5px;
+}
