@@ -1,13 +1,9 @@
 <div
   class="food-category-card"
   *ngIf="foodCategory"
-  (click)="userClickedFoodCategory(foodCategory.strCategory)"
+  (click)="userClickedFoodCategory()"
 >
-  <h3
-    [ngClass]="
-      foodCategory.strCategory === this.choosenCategory ? 'choosen' : ''
-    "
-  >
+  <h3>
     {{ foodCategory.strCategory }}
   </h3>
   <img [src]="foodCategory.strCategoryThumb" alt="foodCategory.strCategory" />

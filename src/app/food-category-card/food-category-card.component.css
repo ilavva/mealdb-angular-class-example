@@ -16,7 +16,7 @@
   -webkit-box-orient: vertical;
 }
 
-.food-category-card-hover p {
+.viewFullDescription.food-category-card p {
   background-color: rgba(0, 0, 0, 0.073);
   overflow: visible;
   display: inline;

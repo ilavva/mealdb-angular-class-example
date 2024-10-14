@@ -28,6 +28,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'; // If using buttons
 import { MatInputModule } from '@angular/material/input';
+import { FoodCategoryTagCardComponent } from './food-category-tag-card/food-category-tag-card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatInputModule } from '@angular/material/input';
     FoodCategoryViewComponent,
     MealsGalleryComponent,
     MealCardComponent,
+    FoodCategoryTagCardComponent,
   ],
   imports: [
     BrowserModule,

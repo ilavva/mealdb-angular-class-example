@@ -10,19 +10,13 @@ import { Category } from '../types';
 })
 export class FoodCategoryCardComponent implements OnInit {
   @Input()
-  foodCategory?: Category;
-  choosenCategory: string;
-  @Output() sendCategoryToParent = new EventEmitter<Category>();
+  foodCategory!: Category;
 
-  constructor(private router: Router) {
-    this.choosenCategory = '';
-  }
+  constructor(private router: Router) {}
   ngOnInit(): void {}
 
-  userClickedFoodCategory(categoryId: string) {
-    console.log('/food-gallery', categoryId);
-    this.choosenCategory = categoryId;
-    this.router.navigate(['/food-gallery', categoryId]);
-    this.sendCategoryToParent.emit(this.foodCategory);
+  userClickedFoodCategory() {
+    console.log('/food-gallery', this.foodCategory.strCategory);
+    this.router.navigate(['/food-gallery', this.foodCategory.strCategory]);
   }
 }

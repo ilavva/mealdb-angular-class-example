@@ -5,24 +5,25 @@
         *ngFor="let curr of categoriesArr"
         (click)="userClickedCategory(curr.strCategory)"
       >
-        <h3
+        <app-food-category-tag-card
+          [foodCategory]="curr"
+          (clickedCategory)="onCategory($event)"
           [ngClass]="
             curr.strCategory === this.choosenCategoryId ? 'choosen' : ''
           "
         >
-          {{ curr.strCategory }}
-        </h3>
+        </app-food-category-tag-card>
       </div>
     </ng-container>
   </div>
-  <hr />
-  <p>Display Category here</p>
+
   <app-food-category-card
+    class="viewFullDescription"
+    *ngIf="this.choosenCategory"
     [foodCategory]="this.choosenCategory"
-    (sendCategoryToParent)="handleCategoryFromChild($event)"
   >
   </app-food-category-card>
-  <p>End</p>
+
   <div class="DetailsView">
     <!-- food- detailed view -->
     <app-food-dishes-detailed-view></app-food-dishes-detailed-view>
