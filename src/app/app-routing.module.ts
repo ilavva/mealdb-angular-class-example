@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'food/:categoryId', component: FoodCategoriesComponent },
   { path: 'food/:categoryId/:idMeal', component: FoodCategoriesComponent },
   { path: 'food-gallery', component: FoodCategoriesGalleryComponent },
-  { path: 'food-gallery/:categoryId', component: FoodCategoryViewComponent },
+  { path: 'food-gallery/:categoryId', component: FoodCategoriesComponent },
   { path: '', redirectTo: '/food-gallery', pathMatch: 'full' },
 ];
 
