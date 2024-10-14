@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MealsGalleryComponent } from './meals-gallery/meals-gallery.component';
+import { MealCardComponent } from './meal-card/meal-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +39,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FoodCategoryCardComponent,
     FoodCategoriesGalleryComponent,
     FoodCategoryViewComponent,
+    MealsGalleryComponent,
+    MealCardComponent,
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
