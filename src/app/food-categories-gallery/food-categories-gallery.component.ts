@@ -23,15 +23,11 @@ export class FoodCategoriesGalleryComponent implements OnInit {
     });
   }
 
-  searchButtonClicked(searchValue: string) {
-    console.log('search for:', searchValue);
-    this.searchStr = searchValue;
+  searchTextChanged(strToSearch: string) {
+    this.searchStr = strToSearch;
   }
-  searchTextChanged(arg0: string) {
-    this.searchStr = arg0;
-  }
-  searchMath(strInDB: string) {
-    if (strInDB.toLowerCase().includes(this.searchStr.toLowerCase())) {
+  isToBeDisplayed(strCategory: string) {
+    if (strCategory.toLowerCase().includes(this.searchStr.toLowerCase())) {
       return true;
     }
     return false;
